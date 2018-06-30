@@ -15,8 +15,10 @@ The binary forces will spawn in the center of the screen and spread out (random 
                                                  -ayyohh
                                                  
                                                  
-                                                 
-                                                 
+
+
+
+...                                                 
 
         Future features
     - a playable game... haha
@@ -24,6 +26,3 @@ The binary forces will spawn in the center of the screen and spread out (random 
     - audio/soundtrack
     - direct link on the web
     - server to hold usernames and highscores
-
-
- 
