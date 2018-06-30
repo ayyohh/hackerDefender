@@ -2,7 +2,7 @@
 
 A game project that has been in the works for three years and will finally see the light of day...... introducing.....
 
-                                     HackerDEFENDER!!!!!!!!
+                                     hackerDefender!!!!!!!!
                 
 You are just browsing the internet when suddenly, are start getting HACKED!
 
