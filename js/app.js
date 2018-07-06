@@ -5,7 +5,7 @@ $('.btn').on('click', function() {
 const ship = {
 	lives: 3,
 	xCoordinate: 5,
-	yCoordinate: 2,
+	yCoordinate: 0,
 	score: 0,
 
 	attack(){
@@ -13,61 +13,61 @@ const ship = {
 		newLaser.moveLaser();
 	},
 	moveLeft(){
-		if(this.xCoordinate == 5 && this.yCoordinate == 2){
+		if(this.xCoordinate == 5 && this.yCoordinate == 0){
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
-			this.xCoordinate = 3;
-			this.yCoordinate = 3;
+			this.xCoordinate = 2;
+			this.yCoordinate = 2;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
 			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
 			this.detectCollision();
-		}else if(this.xCoordinate == 3 && this.yCoordinate == 3){
+		}else if(this.xCoordinate == 2 && this.yCoordinate == 2){
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
-			this.xCoordinate = 2;
+			this.xCoordinate = 0;
 			this.yCoordinate = 5;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
 			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
 			this.detectCollision();
-		}else if(this.xCoordinate == 2 && this.yCoordinate == 5){
+		}else if(this.xCoordinate == 0 && this.yCoordinate == 5){
 			console.log("ROOM TO MOVE RIGHT")
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
-			this.xCoordinate = 3;
-			this.yCoordinate = 7;
-			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
-			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
-			this.detectCollision();
-		}else if(this.xCoordinate == 3 && this.yCoordinate == 7){
-			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
-			this.xCoordinate = 5;
+			this.xCoordinate = 2;
 			this.yCoordinate = 8;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
 			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
 			this.detectCollision();
-
-		}else if(this.xCoordinate == 5 && this.yCoordinate == 8){
+		}else if(this.xCoordinate == 2 && this.yCoordinate == 8){
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
-			this.xCoordinate = 7;
-			this.yCoordinate = 7;
+			this.xCoordinate = 5;
+			this.yCoordinate = 10;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
 			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
 			this.detectCollision();
-		}else if(this.xCoordinate == 7 && this.yCoordinate == 7){
+
+		}else if(this.xCoordinate == 5 && this.yCoordinate == 10){
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
 			this.xCoordinate = 8;
+			this.yCoordinate = 8;
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
+			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
+			this.detectCollision();
+		}else if(this.xCoordinate == 8 && this.yCoordinate == 8){
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
+			this.xCoordinate = 10;
 			this.yCoordinate = 5;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
 			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
 			this.detectCollision();
-		}else if(this.xCoordinate == 8 && this.yCoordinate == 5){
+		}else if(this.xCoordinate == 10 && this.yCoordinate == 5){
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
-			this.xCoordinate = 7;
-			this.yCoordinate = 3;
+			this.xCoordinate = 8;
+			this.yCoordinate = 2;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
 			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
 			this.detectCollision();
-		}else if(this.xCoordinate == 7 && this.yCoordinate == 3){
+		}else if(this.xCoordinate == 8 && this.yCoordinate == 2){
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
 			this.xCoordinate = 5;
-			this.yCoordinate = 2;
+			this.yCoordinate = 0;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
 			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
 			this.detectCollision();
@@ -75,86 +75,86 @@ const ship = {
 		}
 	},
 	moveRight(){
-		if(this.xCoordinate == 5 && this.yCoordinate < 4){
+		if(this.xCoordinate == 5 && this.yCoordinate == 0){
 			console.log("ROOM TO MOVE RIGHT")
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
-			this.xCoordinate = 7;
-			this.yCoordinate = 3;
+			this.xCoordinate = 8;
+			this.yCoordinate = 2;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
 			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
 			this.detectCollision();
-		}else if(this.xCoordinate == 7 && this.yCoordinate == 3){
+		}else if(this.xCoordinate == 8 && this.yCoordinate == 2){
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
-			this.xCoordinate = 8;
+			this.xCoordinate = 10;
 			this.yCoordinate = 5;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
 			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
 			this.detectCollision();
 
-		}else if(this.xCoordinate == 8 && this.yCoordinate == 5){
+		}else if(this.xCoordinate == 10 && this.yCoordinate == 5){
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
-			this.xCoordinate = 7;
-			this.yCoordinate = 7;
-			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
-			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
-			this.detectCollision();
-		}
-		else if(this.xCoordinate == 7 && this.yCoordinate == 7){
-			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
-			this.xCoordinate = 5;
+			this.xCoordinate = 8;
 			this.yCoordinate = 8;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
 			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
 			this.detectCollision();
 		}
-		else if(this.xCoordinate == 5 && this.yCoordinate == 8){
+		else if(this.xCoordinate == 8 && this.yCoordinate == 8){
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
-			this.xCoordinate = 3;
-			this.yCoordinate = 7;
+			this.xCoordinate = 5;
+			this.yCoordinate = 10;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
 			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
 			this.detectCollision();
 		}
-		else if(this.xCoordinate == 3 && this.yCoordinate == 7){
+		else if(this.xCoordinate == 5 && this.yCoordinate == 10){
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
 			this.xCoordinate = 2;
+			this.yCoordinate = 8;
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
+			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
+			this.detectCollision();
+		}
+		else if(this.xCoordinate == 2 && this.yCoordinate == 8){
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
+			this.xCoordinate = 0;
 			this.yCoordinate = 5;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
 			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
 			this.detectCollision();
 		}
-		else if(this.xCoordinate == 2 && this.yCoordinate == 5){
+		else if(this.xCoordinate == 0 && this.yCoordinate == 5){
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
-			this.xCoordinate = 3;
-			this.yCoordinate = 3;
+			this.xCoordinate = 2;
+			this.yCoordinate = 2;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
 			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
 			this.detectCollision();
 		}
-		else if(this.xCoordinate == 3 && this.yCoordinate == 3){
+		else if(this.xCoordinate == 2 && this.yCoordinate == 2){
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('ship');
 			this.xCoordinate = 5;
-			this.yCoordinate = 2;
+			this.yCoordinate = 0;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('ship')
 			console.log(`${this.xCoordinate}-${this.yCoordinate}`);
 			this.detectCollision();
 		}
 	},
 	detectCollision(){
-		const squareAboutToBeLasered = $(`.game-square-${this.xCoordinate}-${this.yCoordinate}`)
-		if(squareAboutToBeLasered.hasClass('enemy')){
-			squareAboutToBeLasered.removeClass('enemy');
-			squareAboutToBeLasered.addClass('explosion');
+		const enemyAboutToGetDunkedOn = $(`.game-square-${this.xCoordinate}-${this.yCoordinate}`)
+		if(enemyAboutToGetDunkedOn.hasClass('enemy')){
+			enemyAboutToGetDunkedOn.removeClass('enemy');
+			enemyAboutToGetDunkedOn.addClass('explosion');
 			this.score++;
 			$('.score').text(`Score: ${this.score}`);
 			console.log(`Score: ${this.score}`);
 			setTimeout(()=>{
-				squareAboutToBeLasered.removeClass('explosion');
+				enemyAboutToGetDunkedOn.removeClass('explosion');
 			}, 200)
 			enemies.forEach(function(enemy){
-				if(enemy.enemyNumber == squareAboutToBeLasered.attr('enemy')){
+				if(enemy.enemyNumber == enemyAboutToGetDunkedOn.attr('enemy')){
 					console.log("DESTROYED ENEMY " + enemy.enemyNumber);
-					squareAboutToBeLasered.removeAttr('enemy');
+					enemyAboutToGetDunkedOn.removeAttr('enemy');
 					enemy.isDestroyed = true;
 				}
 			})
@@ -167,7 +167,7 @@ class Enemy {
 	constructor(xCoordinate){
 		this.xCoordinate = xCoordinate;
 		this.yCoordinate = 5;
-		this.direction = Math.floor(Math.random() * 4 + 1);
+		this.direction = Math.floor(Math.random() * 8 + 1);
 		this.enemyNumber = enemyNumber;
 		this.isDestroyed = false;
 		gameBoard[0][xCoordinate] = this;
@@ -178,7 +178,8 @@ class Enemy {
 	}
 	moveUp(){
 		if(this.yCoordinate == 10){
-			alert('you lose');
+			alert(`You're computer is infected!!!!!! Although it doesn't matter now.... You're score was: ${ship.score}`);
+      location.reload();
 		}else{
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('enemy')
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeAttr('enemy')
@@ -189,7 +190,8 @@ class Enemy {
 	}
 	moveDown(){
 		if(this.yCoordinate == 0){
-			alert('you lose');
+			alert(`You're computer is infected!!!!!! Although it doesn't matter now.... You're score was: ${ship.score}`);
+      location.reload();
 		}else{
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('enemy')
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeAttr('enemy')
@@ -200,7 +202,8 @@ class Enemy {
 	}
 	moveRight(){
 		if(this.xCoordinate == 10){
-			alert('you lose');
+			alert(`You're computer is infected!!!!!! Although it doesn't matter now.... You're score was: ${ship.score}`);
+      location.reload();
 		}else{
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('enemy')
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeAttr('enemy')
@@ -211,11 +214,64 @@ class Enemy {
 	}
 	moveLeft(){
 		if(this.xCoordinate == 0){
-			alert('you lose');
+			alert(`You're computer is infected!!!!!! Although it doesn't matter now.... You're score was: ${ship.score}`);
+      location.reload();
 		}else{
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('enemy')
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeAttr('enemy')
 			this.xCoordinate--;
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('enemy')
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).attr('enemy', this.enemyNumber)
+		}
+	}
+  moveDownRight(){
+		if(this.xCoordinate == 10 || this.yCoordinate == 0){
+			alert(`You're computer is infected!!!!!! Although it doesn't matter now.... You're score was: ${ship.score}`);
+      location.reload();
+		}else{
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('enemy')
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeAttr('enemy')
+			this.xCoordinate++;
+      this.yCoordinate--;
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('enemy')
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).attr('enemy', this.enemyNumber)
+		}
+	}
+  moveUpRight(){
+		if(this.xCoordinate == 10 || this.yCoordinate == 10){
+			alert(`You're computer is infected!!!!!! Although it doesn't matter now.... You're score was: ${ship.score}`);
+      location.reload();
+		}else{
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('enemy')
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeAttr('enemy')
+			this.xCoordinate++;
+      this.yCoordinate++;
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('enemy')
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).attr('enemy', this.enemyNumber)
+		}
+	}
+  moveDownLeft(){
+		if(this.xCoordinate == 0 || this.yCoordinate == 0){
+			alert(`You're computer is infected!!!!!! Although it doesn't matter now.... You're score was: ${ship.score}`);
+      location.reload();
+		}else{
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('enemy')
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeAttr('enemy')
+			this.xCoordinate--;
+      this.yCoordinate--;
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('enemy')
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).attr('enemy', this.enemyNumber)
+		}
+	}
+  moveUpLeft(){
+		if(this.xCoordinate == 0 || this.yCoordinate == 10){
+			alert(`You're computer is infected!!!!!! Although it doesn't matter now.... You're score was: ${ship.score}`);
+      location.reload();
+		}else{
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeClass('enemy')
+			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).removeAttr('enemy')
+			this.xCoordinate--;
+      this.yCoordinate++;
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).addClass('enemy')
 			$(`.game-square-${this.xCoordinate}-${this.yCoordinate}`).attr('enemy', this.enemyNumber)
 		}
@@ -227,14 +283,22 @@ class Enemy {
 		}
 		if(this.direction == 1){
 			this.moveUp();
-		} else if(this.direction == 2){
+		}else if(this.direction == 2){
 			this.moveDown();
-		}
-		else if( this.direction == 3){
+		}else if( this.direction == 3){
 			this.moveRight();
-		} else if( this.direction == 4){
+		}else if( this.direction == 4){
 			this.moveLeft();
-		}
+		}else if( this.direction == 5){
+			this.moveDownRight();
+    }else if( this.direction == 6){
+			this.moveUpRight();
+    }else if( this.direction == 7){
+			this.moveDownLeft();
+    }else if( this.direction == 8){
+			this.moveUpLeft();
+    }
+
 		setTimeout(()=>{
 			this.move()
 		}, 1800)
@@ -260,7 +324,7 @@ for(let i = gameBoard.length-1; i >= 0; i--){
 		$(`.game-row-${i}`).append(`<div class="game-square game-square-${x}-${i}"></div>`)
 	}
 }
-$('.game-square-5-2').addClass('ship');
+$('.game-square-5-0').addClass('ship');
 $(document).keydown(function(e){
 	let keyPressed = e.which;
 	if(keyPressed == 37){
