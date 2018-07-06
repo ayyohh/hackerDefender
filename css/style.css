@@ -1,0 +1,51 @@
+.game-square {
+	width: 40px;
+	height: 40px;
+	margin: 3px;
+	background-color: white;
+	display: inline-block;
+}
+.game-board {
+	width: 510px;
+	height: 550px;
+	margin-left: 50px;
+	background-color: white;
+	display: grid;
+}
+.ship {
+	background-image: url('../img/vacuum.png');
+	background-size: cover;
+}
+.laser {
+	background-image: url('../img/laser.png');
+	background-size: cover;
+}
+.enemy {
+	background-image: url('../img/oneZero.png');
+	background-size: cover;
+
+}
+
+.explosion {
+	background-image: url('../img/explosion.png');
+	background-size: cover;
+}
+.buttonDiv {
+	text-align: center;
+}
+
+h1 {
+
+	text-align: center;
+	font-family: 'Source Code Pro', monospace;
+
+}
+h3 {
+	text-align: center;
+	font-family: 'Source Code Pro', monospace;
+
+}
+h6 {
+	text-align: center;
+	font-family: 'Source Code Pro', monospace;
+}
