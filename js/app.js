@@ -301,7 +301,7 @@ class Enemy {
 
 		setTimeout(()=>{
 			this.move()
-		}, 1800)
+		}, 1500)
 	}
 }
 const gameBoard = [ [0,0,0,0,0,0,0,0,0,0,0],
@@ -339,5 +339,5 @@ const lrrr = new Enemy(5);
 const enemyAssault = setInterval(function(){
 	const newEnemy = new Enemy(5);
 	newEnemy.move();
-}, 1000)
+}, 2000)
 })
